@@ -1,0 +1,72 @@
+<script app="Snap! 9.0, https://snap.berkeley.edu" version="2">
+	<blocks>
+		<block-definition s="square %&apos;length&apos; %&apos;count&apos;" type="command" category="pen">
+			<header></header>
+			<code></code>
+			<translations></translations>
+			<inputs>
+				<input type="%n"></input>
+				<input type="%n"></input>
+			</inputs>
+			<script>
+				<block s="doIf">
+					<block s="reportVariadicGreaterThan">
+						<list>
+							<block var="count"/>
+							<l>0</l>
+						</list>
+					</block>
+					<script>
+						<block s="down"></block>
+						<block s="doRepeat">
+							<l>4</l>
+							<script>
+								<block s="forward">
+									<block var="length"/></block>
+								<block s="turn">
+									<l>90</l>
+								</block>
+							</script>
+						</block>
+						<block s="up"></block>
+						<block s="forward">
+							<block s="reportQuotient">
+								<block var="length"/>
+								<l>4</l>
+							</block>
+						</block>
+						<block s="turn">
+							<l>90</l>
+						</block>
+						<block s="forward">
+							<block s="reportQuotient">
+								<block var="length"/>
+								<l>4</l>
+							</block>
+						</block>
+						<block s="turnLeft">
+							<l>90</l>
+						</block>
+						<custom-block s="square %n %n">
+							<block s="reportQuotient">
+								<block var="length"/>
+								<l>2</l>
+							</block>
+							<block s="reportDifference">
+								<block var="count"/>
+								<l>1</l>
+							</block>
+						</custom-block>
+					</script>
+					<list></list>
+				</block>
+			</script>
+		</block-definition>
+	</blocks>
+	<script>
+		<custom-block s="square %n %n">
+			<l>100</l>
+			<l>4</l>
+		</custom-block>
+	</script>
+</script>
