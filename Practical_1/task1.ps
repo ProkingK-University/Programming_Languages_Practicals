@@ -1,0 +1,29 @@
+%!PS
+/radius 20 def
+/circles 6 def
+/angle 360 circles div def
+
+/circle {
+    newpath
+    0 0 radius 0 360 arc
+} def
+
+/filledcircle {
+    circle
+    gsave
+    fill
+    grestore
+} def
+
+300 400 translate
+
+0 1 circles 1 sub {
+    /i exch def
+    gsave
+    i angle mul rotate
+    100 0 translate
+    i 2 mod 0 eq {filledcircle} {circle} ifelse
+    stroke
+    grestore
+} for
+showpage
