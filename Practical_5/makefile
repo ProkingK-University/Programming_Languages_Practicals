@@ -1,5 +1,7 @@
 main:
-	gfortran -ffree-form -o main s21525600.f
+	gfortran -ffree-form -o main_fortran s21525600.f
+	cobc -x -free -o main_cobol s21525600.cob
 
 run:
-	./main
+	./main_fortran
+	./main_cobol
