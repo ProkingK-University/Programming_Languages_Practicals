@@ -29,3 +29,4 @@ getEverySecondValue([_], []).
 
 getEverySecondValue([_, Second|Tail], [Second|Rest]) :-
 getEverySecondValue(Tail, Rest).
+
